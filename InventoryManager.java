@@ -127,4 +127,21 @@ public class InventoryManager {
             allInvoces.get(i).printInvoce();
         }
     }
+
+    // feature: sales report
+    public void generateSalesReport() {
+        double totRevenue = 0;
+        for (int i = 0; i < allInvoces.size(); i++) {
+            totRevenue = totRevenue + allInvoces.get(i).getGranTotal();
+        }
+
+        System.out.println("\n################### SALES AND BUSINESS REPORT ###################");
+        System.out.println("Total Invoices Generated : " + allInvoces.size());
+        System.out.printf("Total Sales Revenue       : Rs.%.2f\n", totRevenue);
+        System.out.println("Total Unique Items Listed : " + itmList.size());
+        System.out.println("#################################################################");
+
+        // trigger custom bubble sort for report
+        customSortByStock();
+    }
 }
