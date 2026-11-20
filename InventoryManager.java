@@ -59,4 +59,31 @@ public class InventoryManager {
         itm.addStock(addedQty);
         System.out.println("Updated stock for " + itm.getItmName() + ". New quantity: " + itm.getQunatity());
     }
+
+    // DSA IMPLEMENTATION: custom bubble sort algorithm written manually
+    // sorts items based on quantity in ascending order (lowest stock first)
+    public void customSortByStock() {
+        // copy list to not disturb original order
+        ArrayList<Item> sortedList = new ArrayList<Item>(itmList);
+        int n = sortedList.size();
+
+        // standard bubble sort nested loop
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (sortedList.get(j).getQunatity() > sortedList.get(j + 1).getQunatity()) {
+                    // swap items
+                    Item temp = sortedList.get(j);
+                    sortedList.set(j, sortedList.get(j + 1));
+                    sortedList.set(j + 1, temp);
+                }
+            }
+        }
+
+        System.out.println("\n--- INVENTORY SORTED BY STOCK LEVEL (BUBBLE SORT DSA) ---");
+        for (int k = 0; k < sortedList.size(); k++) {
+            Item itm = sortedList.get(k);
+            System.out.println("Stock: " + itm.getQunatity() + " | " + itm.getItmName() + " (ID: " + itm.getItmId() + ")");
+        }
+        System.out.println("---------------------------------------------------------");
+    }
 }
