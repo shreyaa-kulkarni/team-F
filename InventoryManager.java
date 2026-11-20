@@ -103,4 +103,28 @@ public class InventoryManager {
         }
         System.out.println("---------------------------------------------------------");
     }
+
+    // invoice generation feature with custom exceptions
+    public Invoice createInvoice(String custmerName, ArrayList<BillItem> cart, String bllDate) {
+        double granTotall = 0;
+        for (int i = 0; i < cart.size(); i++) {
+            granTotall = granTotall + cart.get(i).getItmTotal();
+        }
+
+        Invoice inv = new Invoice(invCounter, custmerName, cart, granTotall, bllDate);
+        invCounter++;
+        allInvoces.add(inv);
+        return inv;
+    }
+
+    // display all generated invoices
+    public void viewAllInvoices() {
+        if (allInvoces.isEmpty()) {
+            System.out.println("No invoices generated yet.");
+            return;
+        }
+        for (int i = 0; i < allInvoces.size(); i++) {
+            allInvoces.get(i).printInvoce();
+        }
+    }
 }
