@@ -60,6 +60,23 @@ public class InventoryManager {
         System.out.println("Updated stock for " + itm.getItmName() + ". New quantity: " + itm.getQunatity());
     }
 
+    // feature: low stock alerts
+    public void checkLowStock(int alrtLvl) {
+        System.out.println("\n*** LOW STOCK ALERT CHECK (Threshold: " + alrtLvl + ") ***");
+        boolean fndAny = false;
+        for (int i = 0; i < itmList.size(); i++) {
+            Item itm = itmList.get(i);
+            if (itm.getQunatity() <= alrtLvl) {
+                System.out.println("WARNING: Item [" + itm.getItmName() + "] (ID: " + itm.getItmId() + ") is LOW ON STOCK! Remaining: " + itm.getQunatity());
+                fndAny = true;
+            }
+        }
+        if (!fndAny) {
+            System.out.println("Good news! All items have healthy stock levels.");
+        }
+        System.out.println("**************************************************");
+    }
+
     // DSA IMPLEMENTATION: custom bubble sort algorithm written manually
     // sorts items based on quantity in ascending order (lowest stock first)
     public void customSortByStock() {
