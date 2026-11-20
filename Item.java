@@ -17,4 +17,47 @@ public abstract class Item {
         this.qunatity = qunatity;
         this.catagory = catagory;
     }
+
+    // getters and setters for encapsulation
+    public int getItmId() {
+        return itmId;
+    }
+
+    public String getItmName() {
+        return itmName;
+    }
+
+    public double getPriice() {
+        return priice;
+    }
+
+    public void setPriice(double priice) {
+        this.priice = priice;
+    }
+
+    public int getQunatity() {
+        return qunatity;
+    }
+
+    public void setQunatity(int qunatity) {
+        this.qunatity = qunatity;
+    }
+
+    public String getCatagory() {
+        return catagory;
+    }
+
+    // method to reduce stock after billing
+    public void reduceStock(int amt) {
+        this.qunatity = this.qunatity - amt;
+    }
+
+    // method to add stock
+    public void addStock(int amt) {
+        this.qunatity = this.qunatity + amt;
+    }
+
+    // abstract methods for abstraction and polymorphism
+    public abstract double calclatePrice(int buyQty);
+    public abstract void showDetail();
 }
