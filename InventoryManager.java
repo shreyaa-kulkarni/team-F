@@ -1,4 +1,4 @@
-// Team F - InventoryManager.java
+
 // manages store stock and all customer bills
 
 import java.util.ArrayList;
