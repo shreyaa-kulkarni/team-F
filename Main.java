@@ -22,7 +22,7 @@ public class Main {
 
         int choise = 0;
 
-        while (choise != 8) {
+        while (choice != 8) {
             System.out.println("\n----------------- MAIN MENU -----------------");
             System.out.println("1. View Current Stock");
             System.out.println("2. Add New Item (Grocery / Electronic)");
@@ -35,7 +35,7 @@ public class Main {
             System.out.print("Enter your choise (1-8): ");
 
             try {
-                choise = Integer.parseInt(sc.nextLine());
+                choice = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
                 System.out.println("Invalid number! Please enter between 1 to 8.");
                 continue;
