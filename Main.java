@@ -20,7 +20,7 @@ public class Main {
         System.out.println("   WELCOME TO TEAM F INVENTORY & BILLING SYSTEM   ");
         System.out.println("==================================================");
 
-        int choise = 0;
+        int choice = 0;
 
         while (choice != 8) {
             System.out.println("\n----------------- MAIN MENU -----------------");
@@ -41,7 +41,7 @@ public class Main {
                 continue;
             }
 
-            switch (choise) {
+            switch (choice) {
                 case 1:
                     mgr.viewAllStock();
                     break;
